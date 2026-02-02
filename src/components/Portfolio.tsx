@@ -67,46 +67,48 @@ const Portfolio = () => {
           {/* Navigation Buttons */}
 
         </div>
+      </div>
 
-        {/* Horizontal Scroll Container */}
-        <div
-          ref={scrollContainerRef}
-          className="flex overflow-x-auto gap-6 -mx-4 px-4 md:px-0 scrollbar-hide snap-x snap-mandatory"
-        >
-          {portfolioItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="w-[60vw] md:w-[400px] flex-shrink-0 snap-center group cursor-pointer relative"
-            >
-              <div className="aspect-[4/5] overflow-hidden relative">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+      {/* Horizontal Scroll Container - Full Width */}
+      <div
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto gap-6 px-4 md:px-12 pb-4 scrollbar-hide snap-x snap-mandatory w-full"
+      >
+        {portfolioItems.map((item, index) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
+            className="w-[60vw] md:w-[400px] flex-shrink-0 snap-center group cursor-pointer relative"
+          >
+            <div className="aspect-[4/5] overflow-hidden relative">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
 
-                {/* Overlay with title - Always visible or on hover based on pref, sticking to design ref */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+              {/* Overlay with title - Always visible or on hover based on pref, sticking to design ref */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
-                <div className="absolute bottom-4 left-0 right-0 p-8">
-                  <h3 className="font-display text-3xl text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                    {item.title}
-                  </h3>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-white/80 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                    {item.location}
-                  </p>
-                </div>
+              <div className="absolute bottom-4 left-0 right-0 p-8">
+                <h3 className="font-display text-3xl text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  {item.title}
+                </h3>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-white/80 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                  {item.location}
+                </p>
               </div>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+        ))}
 
-          {/* Spacer for right padding */}
-          <div className="w-4 md:w-12 flex-shrink-0" />
-        </div>
+        {/* Spacer for right padding */}
+        <div className="w-4 md:w-12 flex-shrink-0" />
+      </div>
 
+      <div className="container relative">
         {/* Navigation Buttons (Moved Bottom) */}
         <motion.div
           initial={{ opacity: 0 }}
