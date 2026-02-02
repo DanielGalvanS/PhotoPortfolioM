@@ -14,11 +14,11 @@ const Footer = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center">
-                <span className="font-display text-sm font-light">EC</span>
+                <span className="font-display text-sm font-light">MD</span>
               </div>
               <div>
-                <span className="font-display text-lg">Emma</span>
-                <span className="font-display text-lg font-light ml-1">Collins</span>
+                <span className="font-display text-lg">Montse</span>
+                <span className="font-display text-lg font-light ml-1">Díaz</span>
               </div>
             </div>
           </motion.div>
@@ -56,8 +56,8 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <p className="text-sm">
-              E. <a href="mailto:marie@mthompson.com" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
-                emma@ecollins.com
+              E. <a href="mailto:montse@montsediaz.com" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                montse@montsediaz.com
               </a>
             </p>
           </motion.div>
@@ -71,7 +71,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-[10px] tracking-[0.15em] text-primary-foreground/30 mt-16 pt-8 border-t border-primary-foreground/10"
         >
-          © 2024 Emma Collins. All rights reserved.
+          © 2026 Montse Díaz. All rights reserved.
         </motion.p>
       </div>
     </footer>

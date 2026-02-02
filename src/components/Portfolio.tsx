@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import boatImage from "@/assets/boat-aerial.jpg";
 import islandImage from "@/assets/island-aerial.jpg";
 import forestImage from "@/assets/forest-texture.jpg";
@@ -10,13 +11,13 @@ const portfolioItems = [
   {
     id: 1,
     title: "Stranded",
-    location: "Vestfold-fjord, Oslo, Norway",
+    location: "Transfăgărășan, Sibiu, Romania",
     image: forestImage,
   },
   {
     id: 2,
     title: "Lonely",
-    location: "Oré, Sweden",
+    location: "Ötö, Sweden",
     image: islandImage,
   },
   {
@@ -31,57 +32,100 @@ const portfolioItems = [
     location: "Norway",
     image: winterImage,
   },
+  {
+    id: 5,
+    title: "Serenity",
+    location: "Iceland",
+    image: boatImage, // Using reuse for demo
+  },
 ];
 
 const Portfolio = () => {
   const ref = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-5%" });
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: "smooth" });
+    }
+  };
 
   return (
     <section id="portfolio" className="py-16 md:py-24 bg-background lg:pl-20" ref={ref}>
-      <div className="container">
-        {/* Portfolio Grid - Side by side large images */}
-        <div className="grid md:grid-cols-2 gap-4">
-          {portfolioItems.slice(0, 2).map((item, index) => (
+      <div className="container relative">
+        <div className="flex justify-between items-end mb-12">
+          {/* Header/Title if needed, currently empty in design but good for structure */}
+          <div />
+
+          {/* Navigation Buttons */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex gap-4"
+          >
+            <button
+              onClick={scrollLeft}
+              className="p-2 hover:bg-secondary rounded-full transition-colors duration-300 group"
+              aria-label="Scroll left"
+            >
+              <ArrowLeft className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="p-2 hover:bg-secondary rounded-full transition-colors duration-300 group"
+              aria-label="Scroll right"
+            >
+              <ArrowRight className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Horizontal Scroll Container */}
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto gap-6 -mx-4 px-4 md:px-0 scrollbar-hide snap-x snap-mandatory"
+        >
+          {portfolioItems.map((item, index) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
-              className="group cursor-pointer relative"
+              initial={{ opacity: 0, x: 50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="w-[60vw] md:w-[400px] flex-shrink-0 snap-center group cursor-pointer relative"
             >
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="aspect-[4/5] overflow-hidden relative">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Overlay with title */}
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <h3 className="font-display text-2xl md:text-3xl text-primary-foreground mb-2">
+
+                {/* Overlay with title - Always visible or on hover based on pref, sticking to design ref */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+
+                <div className="absolute bottom-4 left-0 right-0 p-8">
+                  <h3 className="font-display text-3xl text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-white/80 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                     {item.location}
                   </p>
                 </div>
               </div>
             </motion.div>
           ))}
-        </div>
 
-        {/* View all link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex justify-end mt-6"
-        >
-          <a href="#" className="link-arrow text-muted-foreground">
-            View all projects
-          </a>
-        </motion.div>
+          {/* Spacer for right padding */}
+          <div className="w-4 md:w-12 flex-shrink-0" />
+        </div>
       </div>
     </section>
   );

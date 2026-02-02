@@ -16,7 +16,7 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 1.02 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.4, delay: 0.2 }}
-        className="relative h-[70vh] md:h-[75vh] mx-4 md:mx-8 lg:mx-12"
+        className="relative h-[70vh] md:h-[75vh] w-full"
       >
         <img
           src={heroImage}
@@ -37,7 +37,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="heading-hero text-primary-foreground"
               >
-                Emma
+                Montse
               </motion.h1>
             </div>
             <div className="overflow-hidden -mt-2">
@@ -47,7 +47,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className="heading-hero text-primary-foreground font-display italic"
               >
-                Collins's
+                Díaz
               </motion.h1>
             </div>
 

@@ -21,7 +21,7 @@ const About = () => {
             <div className="aspect-[3/4] image-reveal">
               <img
                 src={portraitImage}
-                alt="Emma Collins - Photographer"
+                alt="Montse Díaz - Photographer"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -31,7 +31,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground mt-4"
             >
-              Emma Collins
+              Montse Díaz
             </motion.p>
           </motion.div>
 

@@ -12,43 +12,41 @@ const Navigation = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
-      <nav className="container lg:pl-24 flex items-center justify-between py-5">
-        {/* Logo */}
-        <motion.a
-          href="#"
-          className="flex items-center gap-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="w-10 h-10 rounded-full border border-foreground flex items-center justify-center">
-            <span className="font-display text-sm font-light">EC</span>
-          </div>
-          <div className="hidden sm:block">
-            <span className="font-display text-lg tracking-tight">Emma</span>
-            <span className="font-display text-lg tracking-tight font-light ml-1">Collins</span>
-          </div>
-        </motion.a>
+      <nav className="w-full px-4 md:px-5 flex items-center justify-between py-5">
+        <div className="flex items-center gap-12">
+          {/* Logo */}
+          <motion.a
+            href="#"
+            className="flex items-center gap-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="w-10 h-10 rounded-full border border-foreground flex items-center justify-center">
+              <span className="font-display text-sm font-light">MD</span>
+            </div>
+          </motion.a>
 
-        {/* Desktop Navigation */}
-        <motion.ul
-          className="hidden md:flex items-center gap-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <a href={link.href} className="nav-link">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </motion.ul>
+          {/* Desktop Navigation */}
+          <motion.ul
+            className="hidden md:flex items-center gap-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} className="nav-link">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </motion.ul>
+        </div>
 
         {/* Right side - Language & Contact */}
         <motion.div
-          className="hidden md:flex items-center gap-6"
+          className="hidden md:flex items-center gap-6 pr-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -58,7 +56,7 @@ const Navigation = () => {
             <span>/</span>
             <span className="hover:text-foreground cursor-pointer transition-colors">ES</span>
           </div>
-          <a href="mailto:hello@emmacollins.com" className="text-foreground">
+          <a href="mailto:hello@montsediaz.com" className="text-foreground">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"

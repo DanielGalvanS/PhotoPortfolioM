@@ -7,7 +7,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-16 md:w-20 z-40 hidden lg:flex flex-col items-center justify-between py-8 bg-background border-r border-border">
+    <aside className="fixed left-0 top-0 h-screen w-16 md:w-20 z-40 hidden lg:flex flex-col items-center justify-between pt-32 pb-8 bg-background border-r border-border">
       {/* Top - Social Links Vertical */}
       <motion.div
         initial={{ opacity: 0 }}
