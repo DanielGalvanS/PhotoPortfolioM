@@ -65,27 +65,7 @@ const Portfolio = () => {
           <div />
 
           {/* Navigation Buttons */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex gap-4"
-          >
-            <button
-              onClick={scrollLeft}
-              className="p-2 hover:bg-secondary rounded-full transition-colors duration-300 group"
-              aria-label="Scroll left"
-            >
-              <ArrowLeft className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
-            </button>
-            <button
-              onClick={scrollRight}
-              className="p-2 hover:bg-secondary rounded-full transition-colors duration-300 group"
-              aria-label="Scroll right"
-            >
-              <ArrowRight className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
-            </button>
-          </motion.div>
+
         </div>
 
         {/* Horizontal Scroll Container */}
@@ -126,6 +106,29 @@ const Portfolio = () => {
           {/* Spacer for right padding */}
           <div className="w-4 md:w-12 flex-shrink-0" />
         </div>
+
+        {/* Navigation Buttons (Moved Bottom) */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex gap-4 justify-end mt-8 mr-4 md:mr-0"
+        >
+          <button
+            onClick={scrollLeft}
+            className="p-2 hover:bg-secondary rounded-full transition-colors duration-300 group"
+            aria-label="Scroll left"
+          >
+            <ArrowLeft className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+          </button>
+          <button
+            onClick={scrollRight}
+            className="p-2 hover:bg-secondary rounded-full transition-colors duration-300 group"
+            aria-label="Scroll right"
+          >
+            <ArrowRight className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+          </button>
+        </motion.div>
       </div>
     </section>
   );
