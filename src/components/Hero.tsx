@@ -74,7 +74,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 1.1 }}
               className="text-base text-primary-foreground/80 max-w-sm leading-relaxed"
             >
-              My journey began in a significant moment of my life, from there it all changed...
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </motion.p>
           </div>
         </div>

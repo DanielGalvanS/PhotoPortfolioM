@@ -23,16 +23,16 @@ const FeaturedProject = () => {
             >
               <p className="section-label">Featured</p>
               <h2 className="heading-lg mb-6">
-                I'd choose the<br />
-                <span className="font-display italic">woods..</span>
+                Lorem ipsum dolor<br />
+                <span className="font-display italic">sit amet..</span>
               </h2>
 
               <p className="body-sm mb-4 max-w-md">
-                Iceland is probably the land with the biggest and most beautiful scenery. I wouldn't want to wake up anywhere else. If you don't know who you want to be NOW do IT now.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
               </p>
 
               <p className="body-sm mb-8 max-w-md text-muted-foreground/70">
-                It's a life lived here in the frozen tundras of the globe. Be it in silence, not documentaries, great advancement is.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
               </p>
 
               <a href="#" className="link-arrow">
@@ -108,10 +108,10 @@ const FeaturedProject = () => {
             </div>
 
             <h3 className="font-display text-3xl md:text-4xl text-primary-foreground mb-2">
-              Confrides · Spain
+              Lorem Ipsum · Dolor
             </h3>
             <p className="text-[11px] uppercase tracking-[0.2em] text-primary-foreground/60 mb-8">
-              September 23, 2019 · Rectangular detail
+              Sit Amet, Consectetur · Gelit
             </p>
 
             <a

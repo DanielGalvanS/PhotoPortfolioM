@@ -10,32 +10,32 @@ import winterImage from "@/assets/winter-road.jpg";
 const portfolioItems = [
   {
     id: 1,
-    title: "Stranded",
-    location: "Transfăgărășan, Sibiu, Romania",
+    title: "Lorem Ipsum",
+    location: "Dolor Sit Amet",
     image: forestImage,
   },
   {
     id: 2,
-    title: "Lonely",
-    location: "Ötö, Sweden",
+    title: "Consectetur",
+    location: "Adipiscing Elit",
     image: islandImage,
   },
   {
     id: 3,
-    title: "Solitude",
-    location: "Maldives",
+    title: "Magna Aliqua",
+    location: "Ut Enim Ad Minim",
     image: boatImage,
   },
   {
     id: 4,
-    title: "Passage",
-    location: "Norway",
+    title: "Ullamco",
+    location: "Laboris Nisi",
     image: winterImage,
   },
   {
     id: 5,
-    title: "Serenity",
-    location: "Iceland",
+    title: "Excepteur",
+    location: "Sint Occaecat",
     image: boatImage, // Using reuse for demo
   },
 ];

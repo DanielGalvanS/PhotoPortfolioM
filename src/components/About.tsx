@@ -43,7 +43,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="heading-md mb-10"
             >
-              "I changed..."
+              "Lorem Ipsum..."
             </motion.h2>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
@@ -54,10 +54,10 @@ const About = () => {
                 className="space-y-4"
               >
                 <p className="body-sm">
-                  One day it just hit me. It was one of those moments in which you get it all into perspective.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
                 </p>
                 <p className="body-sm">
-                  For me this started in 2014 after a long year of studying. I decided to start searching for the mystery of the (which is North, literally) by the way. I decided to move and study for my Masters and ya know, I stayed forever month in Iceland.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
                 </p>
               </motion.div>
 
@@ -68,10 +68,10 @@ const About = () => {
                 className="space-y-4"
               >
                 <p className="body-sm">
-                  And that's when I found my passion, and it's insisting on the little cliffs I see every detail of this big island since I've captured earth from above.
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.
                 </p>
                 <p className="body-sm">
-                  I'm a visual storyteller drawn to the raw beauty of landscapes from above. My work explores the tension between human presence and untouched wilderness.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
                 </p>
               </motion.div>
             </div>

@@ -1,78 +1,85 @@
 import { motion } from "framer-motion";
+import { Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-16 md:py-20 bg-foreground text-primary-foreground lg:ml-20">
+    <footer id="contact" className="py-10 bg-stone-950 text-white/90 lg:ml-20">
       <div className="container">
-        <div className="grid md:grid-cols-4 gap-12">
-          {/* Logo */}
+
+        {/* Divider */}
+        <div className="w-full h-[1px] bg-white/10 mb-10" />
+
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-0">
+
+          {/* Left: Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center">
-                <span className="font-display text-sm font-light">MD</span>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
+                <span className="font-display text-base font-light tracking-wider">MD</span>
               </div>
-              <div>
-                <span className="font-display text-lg">Montse</span>
-                <span className="font-display text-lg font-light ml-1">Díaz</span>
+              <div className="flex flex-col">
+                <span className="font-display text-xl leading-none">Montse</span>
+                <span className="font-display text-xl font-light leading-none">Díaz</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Address */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-sm text-primary-foreground/60 leading-relaxed">
-              4860 Sunrise Road<br />
-              Chicago, Illinois
-            </p>
-          </motion.div>
+          {/* Right: Info Columns */}
+          <div className="flex flex-col md:flex-row gap-12 md:gap-24">
 
-          {/* Contact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-sm text-primary-foreground/60">
-              T. (834) 5432 3344
-            </p>
-          </motion.div>
+            {/* Address */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-sm text-white/60 font-light leading-relaxed tracking-wide">
+                Lorem ipsum dolor<br />
+                Sit amet, consectetur
+              </p>
+            </motion.div>
 
-          {/* Email */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-sm">
-              E. <a href="mailto:montse@montsediaz.com" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
-                montse@montsediaz.com
-              </a>
-            </p>
-          </motion.div>
+            {/* Contact */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-3"
+            >
+              <div className="flex items-center gap-3 text-sm text-white/60 font-light tracking-wide">
+                <Phone className="w-4 h-4 text-white/40" />
+                <span>+00 (000) 000 0000</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm font-light tracking-wide">
+                <Mail className="w-4 h-4 text-white/40" />
+                <a href="mailto:montse@montsediaz.com" className="text-white/60 hover:text-white transition-colors">
+                  montse@montsediaz.com
+                </a>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
 
         {/* Copyright */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-[10px] tracking-[0.15em] text-primary-foreground/30 mt-16 pt-8 border-t border-primary-foreground/10"
+          className="mt-16 md:mt-24"
         >
-          © 2026 Montse Díaz. All rights reserved.
-        </motion.p>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-white/20">
+            © 2026 Montse Díaz. All rights reserved.
+          </p>
+        </motion.div>
       </div>
     </footer>
   );

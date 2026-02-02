@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Sidebar = () => {
   const socialLinks = [
     { label: "Instagram", href: "#" },
-    { label: "Twitter", href: "#" },
+    { label: "Linkedin", href: "#" },
   ];
 
   return (
