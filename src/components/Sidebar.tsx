@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Sidebar = () => {
   const socialLinks = [
-    { label: "Instagram", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/montsediazcc" },
     { label: "Linkedin", href: "#" },
   ];
 
@@ -19,6 +19,8 @@ const Sidebar = () => {
           <a
             key={link.label}
             href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="vertical-text text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-foreground transition-colors duration-300"
             style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
           >

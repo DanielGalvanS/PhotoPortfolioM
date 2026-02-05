@@ -56,7 +56,7 @@ const Navigation = () => {
             <span>/</span>
             <span className="hover:text-foreground cursor-pointer transition-colors">ES</span>
           </div>
-          <a href="mailto:hello@montsediaz.com" className="text-foreground">
+          <a href="mailto:montsediaz.2003@gmail.com" className="text-foreground">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"

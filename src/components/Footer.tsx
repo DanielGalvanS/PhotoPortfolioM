@@ -59,8 +59,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3 text-sm font-light tracking-wide">
                 <Mail className="w-4 h-4 text-white/40" />
-                <a href="mailto:montse@montsediaz.com" className="text-white/60 hover:text-white transition-colors">
-                  montse@montsediaz.com
+                <a href="mailto:montsediaz.2003@gmail.com" className="text-white/60 hover:text-white transition-colors">
+                  montsediaz.2003@gmail.com
                 </a>
               </div>
             </motion.div>
