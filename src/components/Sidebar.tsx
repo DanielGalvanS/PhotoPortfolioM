@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 
 const Sidebar = () => {
   const socialLinks = [
-    { label: "Instagram", href: "https://www.instagram.com/montsediazcc" },
-    { label: "Linkedin", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/montsediazcc" }
   ];
 
   return (
