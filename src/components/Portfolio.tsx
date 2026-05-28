@@ -9,11 +9,13 @@ import winterImage from "@/assets/winter-road.jpg";
 
 import { Link } from "react-router-dom";
 import { portfolioItems } from "@/data/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Portfolio = () => {
   const ref = useRef(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-5%" });
+  const { t } = useLanguage();
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -60,7 +62,6 @@ const Portfolio = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Overlay with title - Always visible or on hover based on pref, sticking to design ref */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
                 <div className="absolute bottom-4 left-0 right-0 p-8">
@@ -68,7 +69,7 @@ const Portfolio = () => {
                     {item.title}
                   </h3>
                   <p className="text-[11px] uppercase tracking-[0.2em] text-white/80 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                    {item.location}
+                    {t(item.location.es, item.location.en)}
                   </p>
                 </div>
               </div>

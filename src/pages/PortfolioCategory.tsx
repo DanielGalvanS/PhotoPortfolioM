@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { portfolioItems } from "@/data/portfolio";
@@ -6,9 +7,16 @@ import Navigation from "@/components/Navigation";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import NotFound from "./NotFound";
+import { useLanguage } from "@/context/LanguageContext";
 
 const PortfolioCategory = () => {
   const { slug } = useParams();
+  const { t } = useLanguage();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
   const category = portfolioItems.find((item) => item.slug === slug);
 
   if (!category) {
@@ -32,14 +40,14 @@ const PortfolioCategory = () => {
             className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors mb-8 group"
           >
             <ArrowLeft className="mr-2 w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
-            Back to Portfolio
+            {t("Volver al Portafolio", "Back to Portfolio")}
           </Link>
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-display mb-4">
             {category.title}
           </h1>
           <p className="text-sm md:text-base uppercase tracking-[0.2em] text-muted-foreground">
-            {category.location}
+            {t(category.location.es, category.location.en)}
           </p>
         </motion.div>
 

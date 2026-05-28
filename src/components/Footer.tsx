@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer id="contact" className="py-10 bg-stone-950 text-white/90 lg:ml-20">
       <div className="container">
@@ -40,8 +43,8 @@ const Footer = () => {
               viewport={{ once: true }}
             >
               <p className="text-sm text-white/60 font-light leading-relaxed tracking-wide">
-                Lorem ipsum dolor<br />
-                Sit amet, consectetur
+                {t("Ciudad de México", "Mexico City")}<br />
+                {t("Disponible para viajar", "Available for travel")}
               </p>
             </motion.div>
 
@@ -55,7 +58,7 @@ const Footer = () => {
             >
               <div className="flex items-center gap-3 text-sm text-white/60 font-light tracking-wide">
                 <Phone className="w-4 h-4 text-white/40" />
-                <span>+00 (000) 000 0000</span>
+                <span>+52 (55) 1234 5678</span>
               </div>
               <div className="flex items-center gap-3 text-sm font-light tracking-wide">
                 <Mail className="w-4 h-4 text-white/40" />
@@ -77,7 +80,7 @@ const Footer = () => {
           className="mt-16 md:mt-24"
         >
           <p className="text-[10px] uppercase tracking-[0.2em] text-white/20">
-            © 2026 Montse Díaz. All rights reserved.
+            © 2026 Montse Díaz. {t("Todos los derechos reservados.", "All rights reserved.")}
           </p>
         </motion.div>
       </div>

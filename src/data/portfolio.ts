@@ -2,7 +2,7 @@ export interface PortfolioItem {
   id: number;
   slug: string;
   title: string;
-  location: string;
+  location: { es: string; en: string };
   image: string;
   photos: string[];
 }
@@ -21,7 +21,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 1,
     slug: "dualidad-natural",
     title: "Dualidad Natural",
-    location: "Proyecto",
+    location: { es: "Proyecto", en: "Project" },
     image: dualidadPhotos[0] || "",
     photos: dualidadPhotos,
   },
@@ -29,7 +29,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 2,
     slug: "moda",
     title: "Moda",
-    location: "Proyecto",
+    location: { es: "Proyecto", en: "Project" },
     image: modaPhotos[0] || "",
     photos: modaPhotos,
   },
@@ -37,7 +37,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 3,
     slug: "desnudo",
     title: "Desnudo",
-    location: "Proyecto",
+    location: { es: "Proyecto", en: "Project" },
     image: desnudoPhotos[0] || "",
     photos: desnudoPhotos,
   },
@@ -45,7 +45,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 4,
     slug: "marcha-lgbt",
     title: "Marcha LGBT",
-    location: "Proyecto",
+    location: { es: "Proyecto", en: "Project" },
     image: marchaLgbtPhotos[0] || "",
     photos: marchaLgbtPhotos,
   },
@@ -53,7 +53,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 5,
     slug: "producto",
     title: "Producto",
-    location: "Proyecto",
+    location: { es: "Proyecto", en: "Project" },
     image: productoPhotos[0] || "",
     photos: productoPhotos,
   },
@@ -61,7 +61,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 6,
     slug: "retrato",
     title: "Retrato",
-    location: "Proyecto",
+    location: { es: "Proyecto", en: "Project" },
     image: retratoPhotos[0] || "",
     photos: retratoPhotos,
   },
@@ -69,7 +69,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 7,
     slug: "social",
     title: "Social",
-    location: "Proyecto",
+    location: { es: "Proyecto", en: "Project" },
     image: socialPhotos[0] || "",
     photos: socialPhotos,
   },
@@ -77,7 +77,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 8,
     slug: "vaquitas",
     title: "Vaquitas",
-    location: "Proyecto",
+    location: { es: "Proyecto", en: "Project" },
     image: vaquitasPhotos[0] || "",
     photos: vaquitasPhotos,
   }

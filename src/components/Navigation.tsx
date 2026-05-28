@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Contact", href: "#contact" },
+    { label: t("Acerca de", "About"), href: "#about" },
+    { label: t("Portafolio", "Portfolio"), href: "#portfolio" },
+    { label: t("Contacto", "Contact"), href: "#contact" },
   ];
 
   return (
@@ -52,9 +54,19 @@ const Navigation = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
-            <span className="text-foreground">EN</span>
+            <span 
+              onClick={() => setLanguage('en')}
+              className={`cursor-pointer transition-colors ${language === 'en' ? 'text-foreground font-semibold' : 'hover:text-foreground'}`}
+            >
+              EN
+            </span>
             <span>/</span>
-            <span className="hover:text-foreground cursor-pointer transition-colors">ES</span>
+            <span 
+              onClick={() => setLanguage('es')}
+              className={`cursor-pointer transition-colors ${language === 'es' ? 'text-foreground font-semibold' : 'hover:text-foreground'}`}
+            >
+              ES
+            </span>
           </div>
           <a href="mailto:montsediaz.2003@gmail.com" className="text-foreground">
             <svg

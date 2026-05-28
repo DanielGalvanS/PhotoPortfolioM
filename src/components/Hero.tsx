@@ -1,17 +1,18 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import heroImage from "@/assets/hero-forest-road.jpg";
-import boatImage from "@/assets/boat-aerial.jpg";
-import winterImage from "@/assets/winter-road.jpg";
+import { portfolioItems } from "@/data/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 
-const heroImages = [
-  { id: 1, image: heroImage, number: "01" },
-  { id: 2, image: winterImage, number: "02" },
-  { id: 3, image: boatImage, number: "03" }
-];
+const firstProjectPhotos = portfolioItems[0]?.photos || [];
+const heroImages = firstProjectPhotos.map((img, index) => ({
+  id: index + 1,
+  image: img,
+  number: String(index + 1).padStart(2, '0')
+}));
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -103,7 +104,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="text-[11px] uppercase tracking-[0.3em] text-primary-foreground/90 mb-4"
             >
-              From above — a bird's perspective
+              Dualidad Natural
             </motion.p>
 
             <motion.p
@@ -112,7 +113,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="text-base text-primary-foreground/80 max-w-sm leading-relaxed"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {t("Explorando la conexión entre el ser y la naturaleza a través de la fotografía.", "Exploring the connection between self and nature through photography.")}
             </motion.p>
           </div>
         </div>
