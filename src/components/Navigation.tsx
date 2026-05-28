@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { label: t("Acerca de", "About"), href: "#about" },
-    { label: t("Portafolio", "Portfolio"), href: "#portfolio" },
-    { label: t("Contacto", "Contact"), href: "#contact" },
+    { label: t("Acerca de", "About"), href: "/#about" },
+    { label: t("Portafolio", "Portfolio"), href: "/#portfolio" },
+    { label: t("Contacto", "Contact"), href: "/#contact" },
   ];
 
   return (
@@ -38,9 +39,9 @@ const Navigation = () => {
           >
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="nav-link">
+                <Link to={link.href} className="nav-link">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </motion.ul>
@@ -125,13 +126,13 @@ const Navigation = () => {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="font-display text-2xl font-light"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </ul>

@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Sidebar from "@/components/Sidebar";
@@ -10,25 +10,28 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   const location = useLocation();
+  const isFirstRender = useRef(true);
 
   useLayoutEffect(() => {
     if (location.hash) {
       const id = location.hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
-        // Temporarily disable global CSS smooth scrolling
-        const originalStyle = document.documentElement.style.scrollBehavior;
-        document.documentElement.style.scrollBehavior = 'auto';
-        
-        // Scroll instantly
-        element.scrollIntoView();
-        
-        // Restore global smooth scrolling after the jump
-        setTimeout(() => {
-          document.documentElement.style.scrollBehavior = originalStyle;
-        }, 50);
+        if (isFirstRender.current) {
+          // Temporarily disable global CSS smooth scrolling for instant jump on mount
+          const originalStyle = document.documentElement.style.scrollBehavior;
+          document.documentElement.style.scrollBehavior = 'auto';
+          element.scrollIntoView();
+          setTimeout(() => {
+            document.documentElement.style.scrollBehavior = originalStyle;
+          }, 50);
+        } else {
+          // Normal smooth scroll for subsequent clicks on the same page
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
+    isFirstRender.current = false;
   }, [location]);
 
   return (
