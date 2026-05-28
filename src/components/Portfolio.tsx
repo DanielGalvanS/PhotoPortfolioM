@@ -7,38 +7,8 @@ import islandImage from "@/assets/island-aerial.jpg";
 import forestImage from "@/assets/forest-texture.jpg";
 import winterImage from "@/assets/winter-road.jpg";
 
-const portfolioItems = [
-  {
-    id: 1,
-    title: "Lorem Ipsum",
-    location: "Dolor Sit Amet",
-    image: forestImage,
-  },
-  {
-    id: 2,
-    title: "Consectetur",
-    location: "Adipiscing Elit",
-    image: islandImage,
-  },
-  {
-    id: 3,
-    title: "Magna Aliqua",
-    location: "Ut Enim Ad Minim",
-    image: boatImage,
-  },
-  {
-    id: 4,
-    title: "Ullamco",
-    location: "Laboris Nisi",
-    image: winterImage,
-  },
-  {
-    id: 5,
-    title: "Excepteur",
-    location: "Sint Occaecat",
-    image: boatImage, // Using reuse for demo
-  },
-];
+import { Link } from "react-router-dom";
+import { portfolioItems } from "@/data/portfolio";
 
 const Portfolio = () => {
   const ref = useRef(null);
@@ -82,25 +52,27 @@ const Portfolio = () => {
             transition={{ duration: 0.8, delay: index * 0.1 }}
             className="w-[60vw] md:w-[400px] flex-shrink-0 snap-center group cursor-pointer relative"
           >
-            <div className="aspect-[4/5] overflow-hidden relative">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+            <Link to={`/portfolio/${item.slug}`} className="block h-full">
+              <div className="aspect-[4/5] overflow-hidden relative">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-              {/* Overlay with title - Always visible or on hover based on pref, sticking to design ref */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                {/* Overlay with title - Always visible or on hover based on pref, sticking to design ref */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
-              <div className="absolute bottom-4 left-0 right-0 p-8">
-                <h3 className="font-display text-3xl text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  {item.title}
-                </h3>
-                <p className="text-[11px] uppercase tracking-[0.2em] text-white/80 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                  {item.location}
-                </p>
+                <div className="absolute bottom-4 left-0 right-0 p-8">
+                  <h3 className="font-display text-3xl text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    {item.title}
+                  </h3>
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-white/80 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                    {item.location}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           </motion.div>
         ))}
 
