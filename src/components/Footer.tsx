@@ -35,18 +35,7 @@ const Footer = () => {
           {/* Right: Info Columns */}
           <div className="flex flex-col md:flex-row gap-12 md:gap-24">
 
-            {/* Address */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-sm text-white/60 font-light leading-relaxed tracking-wide">
-                {t("Ciudad de México", "Mexico City")}<br />
-                {t("Disponible para viajar", "Available for travel")}
-              </p>
-            </motion.div>
+
 
             {/* Contact */}
             <motion.div
